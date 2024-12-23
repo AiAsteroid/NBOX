@@ -195,6 +195,7 @@ WORDING : Dict[str, Any] =\
 		'source_file': 'ИСТОЧНИК',
 		# target
 		'target_file': 'ЦЕЛЬ',
+		'examples_image_gallery': 'ГАЛЕРЕЯ',
 		# temp frame
 		'temp_frame_format_dropdown': 'ФОРМАТ ВРЕМЕННОГО КАДРА',
 		# trim frame
