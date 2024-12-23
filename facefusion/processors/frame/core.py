@@ -38,6 +38,7 @@ def load_frame_processor_module(frame_processor : str) -> Any:
 		frame_processor_module = importlib.import_module('facefusion.processors.frame.modules.' + frame_processor)
 		for method_name in FRAME_PROCESSORS_METHODS:
 			if not hasattr(frame_processor_module, method_name):
+				print(frame_processor_module, method_name)
 				raise NotImplementedError
 	except ModuleNotFoundError as exception:
 		logger.error(wording.get('frame_processor_not_loaded').format(frame_processor = frame_processor), __name__.upper())

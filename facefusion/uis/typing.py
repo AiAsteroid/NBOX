@@ -3,11 +3,13 @@ import gradio
 
 File = IO[Any]
 Component = gradio.File or gradio.Image or gradio.Video or gradio.Slider
-ComponentName = Literal\
-[
+ComponentName = Literal \
+	[
 	'source_audio',
 	'source_image',
 	'target_image',
+	'examples',
+	'examples_image',
 	'target_video',
 	'preview_frame_slider',
 	'trim_frame_start_slider',

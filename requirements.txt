@@ -1,6 +1,6 @@
 filetype==1.2.0
 fsspec==2024.6.1
-gradio==3.50.2
+gradio==5.5.0
 numpy==1.26.4
 onnx==1.16.0
 onnxruntime==1.17.3

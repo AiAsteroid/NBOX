@@ -1,24 +1,23 @@
-# from typing import Optional
-# import gradio
-#
-# from facefusion import metadata, wording
-#
-# ABOUT_BUTTON : Optional[gradio.HTML] = None
-# DONATE_BUTTON : Optional[gradio.HTML] = None
-#
-#
+from typing import Optional
+import gradio
+
+from facefusion import metadata, wording
+
+ABOUT_BUTTON : Optional[gradio.HTML] = None
+DONATE_BUTTON : Optional[gradio.HTML] = None
+
+
 def render() -> None:
-	print("")
-# 	global ABOUT_BUTTON
-# 	global DONATE_BUTTON
-#
-# 	ABOUT_BUTTON = gradio.Button(
-# 		value = metadata.get('name') + ' ' + metadata.get('version'),
-# 		variant = 'primary',
-# 		link = metadata.get('url')
-# 	)
-# 	DONATE_BUTTON = gradio.Button(
-# 		value = 'НЕЙРО-СОФТ ● РЕПАКИ И ПОРТАТИВКИ',
-# 		link = 'https://t.me/neuroport',
-# 		size = 'sm'
-# 	)
+	global ABOUT_BUTTON
+	global DONATE_BUTTON
+
+	ABOUT_BUTTON = gradio.Button(
+		value = metadata.get('name') + ' ' + metadata.get('version'),
+		variant = 'primary',
+		link = metadata.get('url')
+	)
+	DONATE_BUTTON = gradio.Button(
+		value = 'НЕЙРО-СОФТ ● РЕПАКИ И ПОРТАТИВКИ',
+		link = 'https://t.me/neuroport',
+		size = 'sm'
+	)

@@ -1,12 +1,13 @@
 from typing import Tuple, Optional
+
 import gradio
 
 import facefusion.globals
 from facefusion import wording
 from facefusion.face_store import clear_static_faces, clear_reference_faces
-from facefusion.uis.typing import File
 from facefusion.filesystem import get_file_size, is_image, is_video
 from facefusion.uis.core import register_ui_component
+from facefusion.uis.typing import File
 from facefusion.vision import get_video_frame, normalize_frame_color
 
 FILE_SIZE_LIMIT = 512 * 1024 * 1024
