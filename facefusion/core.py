@@ -1,5 +1,7 @@
 import os
 
+from toolz.curried import peekn
+
 os.environ['OMP_NUM_THREADS'] = '1'
 
 import signal
@@ -221,6 +223,7 @@ def apply_config(program: ArgumentParser) -> None:
 
 
 def validate_args(program: ArgumentParser) -> None:
+	print("validate_args start")
 	try:
 		for action in program._actions:
 			if action.default:
@@ -231,9 +234,11 @@ def validate_args(program: ArgumentParser) -> None:
 					program._check_value(action, action.default)
 	except Exception as exception:
 		program.error(str(exception))
+	print("validate_args end")
 
 
 def apply_args(program: ArgumentParser) -> None:
+	print("core.apply_args start")
 	args = program.parse_args()
 	# general
 	facefusion.globals.source_paths = args.source_paths
@@ -310,9 +315,11 @@ def apply_args(program: ArgumentParser) -> None:
 	# uis
 	facefusion.globals.open_browser = args.open_browser
 	facefusion.globals.ui_layouts = args.ui_layouts
+	print("core.apply_args end")
 
 
 def run(program: ArgumentParser) -> None:
+	print("core.run start")
 	validate_args(program)
 	apply_args(program)
 	logger.init(facefusion.globals.log_level)
@@ -336,6 +343,8 @@ def run(program: ArgumentParser) -> None:
 			if not ui_layout.pre_check():
 				return
 		ui.launch()
+	print("core.run end")
+
 
 
 def destroy() -> None:
