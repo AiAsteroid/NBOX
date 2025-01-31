@@ -77,7 +77,8 @@ def listen() -> None:
 		'source_audio',
 		'source_image',
 		'target_image',
-		'target_video'
+		'target_video',
+		'examples_image'
 	]):
 		for method in [ 'upload', 'change', 'clear' ]:
 			getattr(ui_component, method)(update_preview_image, inputs = PREVIEW_FRAME_SLIDER, outputs = PREVIEW_IMAGE)

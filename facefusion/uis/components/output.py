@@ -11,45 +11,21 @@ from facefusion.uis.core import get_ui_component
 from facefusion.filesystem import clear_temp, is_image, is_video
 
 OUTPUT_IMAGE : Optional[gradio.Image] = None
-# OUTPUT_VIDEO : Optional[gradio.Video] = None
 OUTPUT_START_BUTTON: Optional[gradio.Button] = None
-
-
-# OUTPUT_CLEAR_BUTTON : Optional[gradio.Button] = None
-# OUTPUT_STOP_BUTTON : Optional[gradio.Button] = None
-
 
 def render() -> None:
 	global OUTPUT_IMAGE
-	# global OUTPUT_VIDEO
 	global OUTPUT_START_BUTTON
-	# global OUTPUT_STOP_BUTTON
-	# global OUTPUT_CLEAR_BUTTON
 
 	OUTPUT_IMAGE = gradio.Image(
 		label = wording.get('uis.output_image_or_video'),
 		visible = False
 	)
-	# OUTPUT_VIDEO = gradio.Video(
-	# 	label = wording.get('uis.output_image_or_video')
-	# )
 	OUTPUT_START_BUTTON = gradio.Button(
 		value=wording.get('uis.start_button'),
 		variant='primary',
 		size='sm'
 	)
-
-
-# OUTPUT_STOP_BUTTON = gradio.Button(
-# 	value = wording.get('uis.stop_button'),
-# 	variant = 'primary',
-# 	size = 'sm',
-# 	visible = False
-# )
-# OUTPUT_CLEAR_BUTTON = gradio.Button(
-# 	value = wording.get('uis.clear_button'),
-# 	size = 'sm'
-# )
 
 
 def listen() -> None:
@@ -58,15 +34,9 @@ def listen() -> None:
 		OUTPUT_START_BUTTON.click(start, outputs=[OUTPUT_START_BUTTON])
 		OUTPUT_START_BUTTON.click(process, outputs=[OUTPUT_START_BUTTON, OUTPUT_IMAGE])
 
-	# OUTPUT_START_BUTTON.click(start, outputs = [ OUTPUT_START_BUTTON, OUTPUT_STOP_BUTTON ])
-	# OUTPUT_START_BUTTON.click(process, outputs = [ OUTPUT_IMAGE, OUTPUT_VIDEO, OUTPUT_START_BUTTON, OUTPUT_STOP_BUTTON ])
-
-
-# OUTPUT_STOP_BUTTON.click(stop, outputs = [ OUTPUT_START_BUTTON, OUTPUT_STOP_BUTTON ])
-# OUTPUT_CLEAR_BUTTON.click(clear, outputs = [ OUTPUT_IMAGE, OUTPUT_VIDEO ])
-
 
 def start() -> Tuple[gradio.Button, gradio.Button]:
+	print("BUTTON PRESSED")
 	while not process_manager.is_processing():
 		sleep(0.5)
 	return gradio.Button(visible=False), gradio.Button(visible=True)

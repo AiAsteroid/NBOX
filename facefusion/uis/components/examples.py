@@ -45,10 +45,9 @@ def update_examples_image(selected_image: str) -> gradio.Image:
 	clear_reference_faces()
 	clear_static_faces()
 
-	# print(selected_image)
-	print(EXAMPLES_IMAGE.value)
 	if selected_image and is_image(selected_image):
 		facefusion.globals.target_path = selected_image
+		print(f"Target path updated to: {facefusion.globals.target_path}")
 		return gradio.Image(value=selected_image, visible=True)
 
 	facefusion.globals.target_path = None

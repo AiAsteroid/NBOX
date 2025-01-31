@@ -18,7 +18,7 @@ def render() -> None:
 		label = wording.get('uis.temp_frame_format_dropdown'),
 		choices = facefusion.choices.temp_frame_formats,
 		value = facefusion.globals.temp_frame_format,
-		visible = is_video(facefusion.globals.target_path)
+		visible = False
 	)
 
 

@@ -17,14 +17,16 @@ def render() -> None:
 	VIDEO_MEMORY_STRATEGY_DROPDOWN = gradio.Dropdown(
 		label = wording.get('uis.video_memory_strategy_dropdown'),
 		choices = facefusion.choices.video_memory_strategies,
-		value = facefusion.globals.video_memory_strategy
+		value = facefusion.globals.video_memory_strategy,
+		visible=False
 	)
 	SYSTEM_MEMORY_LIMIT_SLIDER = gradio.Slider(
 		label = wording.get('uis.system_memory_limit_slider'),
 		step =facefusion.choices.system_memory_limit_range[1] - facefusion.choices.system_memory_limit_range[0],
 		minimum = facefusion.choices.system_memory_limit_range[0],
 		maximum = facefusion.choices.system_memory_limit_range[-1],
-		value = facefusion.globals.system_memory_limit
+		value = facefusion.globals.system_memory_limit,
+		visible=False
 	)
 
 

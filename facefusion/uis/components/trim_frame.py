@@ -36,15 +36,15 @@ def render() -> None:
 		video_frame_total = count_video_frame_total(facefusion.globals.target_path)
 		trim_frame_start_slider_args['value'] = facefusion.globals.trim_frame_start or 0
 		trim_frame_start_slider_args['maximum'] = video_frame_total
-		trim_frame_start_slider_args['visible'] = True
+		trim_frame_start_slider_args['visible'] = False
 		trim_frame_end_slider_args['value'] = facefusion.globals.trim_frame_end or video_frame_total
 		trim_frame_end_slider_args['maximum'] = video_frame_total
-		trim_frame_end_slider_args['visible'] = True
+		trim_frame_end_slider_args['visible'] = False
 	with gradio.Row():
 		TRIM_FRAME_START_SLIDER = gradio.Slider(**trim_frame_start_slider_args)
 		TRIM_FRAME_END_SLIDER = gradio.Slider(**trim_frame_end_slider_args)
-	# register_ui_component('trim_frame_start_slider', TRIM_FRAME_START_SLIDER)
-	# register_ui_component('trim_frame_end_slider', TRIM_FRAME_END_SLIDER)
+	register_ui_component('trim_frame_start_slider', TRIM_FRAME_START_SLIDER)
+	register_ui_component('trim_frame_end_slider', TRIM_FRAME_END_SLIDER)
 
 
 def listen() -> None:
