@@ -35,6 +35,17 @@ from facefusion.vision import read_image, read_static_images, detect_image_resol
 onnxruntime.set_default_logger_severity(3)
 warnings.filterwarnings('ignore', category=UserWarning, module='gradio')
 
+def wrapped_cli() -> None:
+	try:
+		cli()
+	except Exception as exception:
+		print(
+			exception,
+			exception.__traceback__,
+			exception.__cause__,
+		)
+
+
 
 def cli() -> None:
 	print("in cli1")
