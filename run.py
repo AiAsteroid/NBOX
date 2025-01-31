@@ -13,7 +13,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-if __name__ == 'main':
+if __name__ == '__main__':
     try:
         logger.info("Запуск приложения...")
         core.cli()
