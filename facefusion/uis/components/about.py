@@ -14,10 +14,12 @@ def render() -> None:
 	ABOUT_BUTTON = gradio.Button(
 		value = metadata.get('name') + ' ' + metadata.get('version'),
 		variant = 'primary',
-		link = metadata.get('url')
+		link = metadata.get('url'),
+		visible=False
 	)
 	DONATE_BUTTON = gradio.Button(
 		value = 'НЕЙРО-СОФТ ● РЕПАКИ И ПОРТАТИВКИ',
 		link = 'https://t.me/neuroport',
-		size = 'sm'
+		size = 'sm',
+		visible=False
 	)

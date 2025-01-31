@@ -36,13 +36,14 @@ def render() -> None:
 		label = wording.get('uis.face_debugger_items_checkbox_group'),
 		choices = frame_processors_choices.face_debugger_items,
 		value = frame_processors_globals.face_debugger_items,
-		visible = 'face_debugger' in facefusion.globals.frame_processors
+		visible=False
+
 	)
 	FACE_ENHANCER_MODEL_DROPDOWN = gradio.Dropdown(
 		label = wording.get('uis.face_enhancer_model_dropdown'),
 		choices = frame_processors_choices.face_enhancer_models,
 		value = frame_processors_globals.face_enhancer_model,
-		visible = 'face_enhancer' in facefusion.globals.frame_processors
+		visible=False
 	)
 	FACE_ENHANCER_BLEND_SLIDER = gradio.Slider(
 		label = wording.get('uis.face_enhancer_blend_slider'),
@@ -50,19 +51,19 @@ def render() -> None:
 		step = frame_processors_choices.face_enhancer_blend_range[1] - frame_processors_choices.face_enhancer_blend_range[0],
 		minimum = frame_processors_choices.face_enhancer_blend_range[0],
 		maximum = frame_processors_choices.face_enhancer_blend_range[-1],
-		visible = 'face_enhancer' in facefusion.globals.frame_processors
+		visible=False
 	)
 	FACE_SWAPPER_MODEL_DROPDOWN = gradio.Dropdown(
 		label = wording.get('uis.face_swapper_model_dropdown'),
 		choices = frame_processors_choices.face_swapper_models,
 		value = frame_processors_globals.face_swapper_model,
-		visible = 'face_swapper' in facefusion.globals.frame_processors
+		visible=False
 	)
 	FRAME_COLORIZER_MODEL_DROPDOWN = gradio.Dropdown(
 		label = wording.get('uis.frame_colorizer_model_dropdown'),
 		choices = frame_processors_choices.frame_colorizer_models,
 		value = frame_processors_globals.frame_colorizer_model,
-		visible = 'frame_colorizer' in facefusion.globals.frame_processors
+		visible=False
 	)
 	FRAME_COLORIZER_BLEND_SLIDER = gradio.Slider(
 		label = wording.get('uis.frame_colorizer_blend_slider'),
@@ -70,19 +71,19 @@ def render() -> None:
 		step = frame_processors_choices.frame_colorizer_blend_range[1] - frame_processors_choices.frame_colorizer_blend_range[0],
 		minimum = frame_processors_choices.frame_colorizer_blend_range[0],
 		maximum = frame_processors_choices.frame_colorizer_blend_range[-1],
-		visible = 'frame_colorizer' in facefusion.globals.frame_processors
+		visible=False
 	)
 	FRAME_COLORIZER_SIZE_DROPDOWN = gradio.Dropdown(
 		label = wording.get('uis.frame_colorizer_size_dropdown'),
 		choices = frame_processors_choices.frame_colorizer_sizes,
 		value = frame_processors_globals.frame_colorizer_size,
-		visible = 'frame_colorizer' in facefusion.globals.frame_processors
+		visible=False
 	)
 	FRAME_ENHANCER_MODEL_DROPDOWN = gradio.Dropdown(
 		label = wording.get('uis.frame_enhancer_model_dropdown'),
 		choices = frame_processors_choices.frame_enhancer_models,
 		value = frame_processors_globals.frame_enhancer_model,
-		visible = 'frame_enhancer' in facefusion.globals.frame_processors
+		visible=False
 	)
 	FRAME_ENHANCER_BLEND_SLIDER = gradio.Slider(
 		label = wording.get('uis.frame_enhancer_blend_slider'),
@@ -90,24 +91,24 @@ def render() -> None:
 		step = frame_processors_choices.frame_enhancer_blend_range[1] - frame_processors_choices.frame_enhancer_blend_range[0],
 		minimum = frame_processors_choices.frame_enhancer_blend_range[0],
 		maximum = frame_processors_choices.frame_enhancer_blend_range[-1],
-		visible = 'frame_enhancer' in facefusion.globals.frame_processors
+		visible=False
 	)
 	LIP_SYNCER_MODEL_DROPDOWN = gradio.Dropdown(
 		label = wording.get('uis.lip_syncer_model_dropdown'),
 		choices = frame_processors_choices.lip_syncer_models,
 		value = frame_processors_globals.lip_syncer_model,
-		visible = 'lip_syncer' in facefusion.globals.frame_processors
+		visible=False
 	)
-	# register_ui_component('face_debugger_items_checkbox_group', FACE_DEBUGGER_ITEMS_CHECKBOX_GROUP)
-	# register_ui_component('face_enhancer_model_dropdown', FACE_ENHANCER_MODEL_DROPDOWN)
-	# register_ui_component('face_enhancer_blend_slider', FACE_ENHANCER_BLEND_SLIDER)
-	# register_ui_component('face_swapper_model_dropdown', FACE_SWAPPER_MODEL_DROPDOWN)
-	# register_ui_component('frame_colorizer_model_dropdown', FRAME_COLORIZER_MODEL_DROPDOWN)
-	# register_ui_component('frame_colorizer_blend_slider', FRAME_COLORIZER_BLEND_SLIDER)
-	# register_ui_component('frame_colorizer_size_dropdown', FRAME_COLORIZER_SIZE_DROPDOWN)
-	# register_ui_component('frame_enhancer_model_dropdown', FRAME_ENHANCER_MODEL_DROPDOWN)
-	# register_ui_component('frame_enhancer_blend_slider', FRAME_ENHANCER_BLEND_SLIDER)
-	# register_ui_component('lip_syncer_model_dropdown', LIP_SYNCER_MODEL_DROPDOWN)
+	register_ui_component('face_debugger_items_checkbox_group', FACE_DEBUGGER_ITEMS_CHECKBOX_GROUP)
+	register_ui_component('face_enhancer_model_dropdown', FACE_ENHANCER_MODEL_DROPDOWN)
+	register_ui_component('face_enhancer_blend_slider', FACE_ENHANCER_BLEND_SLIDER)
+	register_ui_component('face_swapper_model_dropdown', FACE_SWAPPER_MODEL_DROPDOWN)
+	register_ui_component('frame_colorizer_model_dropdown', FRAME_COLORIZER_MODEL_DROPDOWN)
+	register_ui_component('frame_colorizer_blend_slider', FRAME_COLORIZER_BLEND_SLIDER)
+	register_ui_component('frame_colorizer_size_dropdown', FRAME_COLORIZER_SIZE_DROPDOWN)
+	register_ui_component('frame_enhancer_model_dropdown', FRAME_ENHANCER_MODEL_DROPDOWN)
+	register_ui_component('frame_enhancer_blend_slider', FRAME_ENHANCER_BLEND_SLIDER)
+	register_ui_component('lip_syncer_model_dropdown', LIP_SYNCER_MODEL_DROPDOWN)
 
 
 def listen() -> None:

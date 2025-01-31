@@ -16,9 +16,10 @@ def render() -> None:
 	FRAME_PROCESSORS_CHECKBOX_GROUP = gradio.CheckboxGroup(
 		label = wording.get('uis.frame_processors_checkbox_group'),
 		choices = sort_frame_processors(facefusion.globals.frame_processors),
-		value = facefusion.globals.frame_processors
+		value = facefusion.globals.frame_processors,
+		visible=False
 	)
-	# register_ui_component('frame_processors_checkbox_group', FRAME_PROCESSORS_CHECKBOX_GROUP)
+	register_ui_component('frame_processors_checkbox_group', FRAME_PROCESSORS_CHECKBOX_GROUP)
 
 
 def listen() -> None:
