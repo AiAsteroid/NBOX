@@ -37,7 +37,9 @@ warnings.filterwarnings('ignore', category=UserWarning, module='gradio')
 
 
 def cli() -> None:
+	print("in cli1")
 	signal.signal(signal.SIGINT, lambda signal_number, frame: destroy())
+	print("in cli2")
 	program = ArgumentParser(formatter_class=lambda prog: HelpFormatter(prog, max_help_position=200), add_help=False)
 	# general
 	program.add_argument('-c', '--config', help=wording.get('help.config'), dest='config_path',
