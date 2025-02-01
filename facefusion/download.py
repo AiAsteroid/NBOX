@@ -62,7 +62,7 @@ def conditional_download_face_masker(download_directory_path: str, urls: List[st
 						progress.update(current_size - progress.n)
 		if download_size and not is_download_done(url, download_file_path):
 			os.remove(download_file_path)
-			conditional_download(download_directory_path, [url])
+			conditional_download_face_masker(download_directory_path, [url])
 
 
 @lru_cache(maxsize=None)
