@@ -61,6 +61,7 @@ def conditional_download_face_masker(download_directory_path: str, urls: List[st
 						current_size = get_file_size(download_file_path)
 						progress.update(current_size - progress.n)
 		if download_size and not is_download_done(url, download_file_path):
+			print('satisfied download_size with url', url)
 			os.remove(download_file_path)
 			conditional_download_face_masker(download_directory_path, [url])
 
