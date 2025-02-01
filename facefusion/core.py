@@ -328,9 +328,11 @@ def run(program: ArgumentParser) -> None:
 		force_download()
 		return
 	if not pre_check() or not content_analyser.pre_check() or not face_analyser.pre_check() or not face_masker.pre_check() or not voice_extractor.pre_check():
+		print("pre_check not")
 		return
 	for frame_processor_module in get_frame_processors_modules(facefusion.globals.frame_processors):
 		if not frame_processor_module.pre_check():
+			print("frame_processor_module pre_check not")
 			return
 	if facefusion.globals.headless:
 		conditional_process()
@@ -339,6 +341,7 @@ def run(program: ArgumentParser) -> None:
 
 		for ui_layout in ui.get_ui_layouts_modules(facefusion.globals.ui_layouts):
 			if not ui_layout.pre_check():
+				print('ui_layout pre_check not')
 				return
 		print("before ui launch")
 		ui.launch()
