@@ -34,8 +34,8 @@ MODELS : ModelSet =\
 {
 	'wav2lip_gan':
 	{
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models/wav2lip_gan.onnx',
-		'path': resolve_relative_path('../.assets/models/wav2lip_gan.onnx')
+		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/wav2lip_gan_96.onnx',
+		'path': resolve_relative_path('../.assets/models/wav2lip_gan_96.onnx')
 	}
 }
 OPTIONS : Optional[OptionsWithModel] = None
