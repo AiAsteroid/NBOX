@@ -46,9 +46,11 @@ def conditional_download_face_masker(download_directory_path: str, urls: List[st
 		download_size = get_download_size(url)
 		print("initial size", initial_size, "download size", download_size)
 		if initial_size < download_size:
+			print('satisfied init < download with url', url)
 			with tqdm(total=download_size, initial=initial_size, desc=wording.get('downloading'), unit='B',
 					  unit_scale=True, unit_divisor=1024, ascii=' =',
 					  disable=facefusion.globals.log_level in ['warn', 'error']) as progress:
+				print('starting face_masker curl with', url)
 				subprocess.Popen(
 					['curl', '--create-dirs', '--silent', '--insecure', '--location', '--continue-at', '-',
 					 '--output', download_file_path, url])
