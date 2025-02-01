@@ -17,14 +17,16 @@ def render() -> None:
 	BENCHMARK_RUNS_CHECKBOX_GROUP = gradio.CheckboxGroup(
 		label = wording.get('uis.benchmark_runs_checkbox_group'),
 		value = list(BENCHMARKS.keys()),
-		choices = list(BENCHMARKS.keys())
+		choices = list(BENCHMARKS.keys()),
+		visible=False
 	)
 	BENCHMARK_CYCLES_SLIDER = gradio.Slider(
 		label = wording.get('uis.benchmark_cycles_slider'),
 		value = 5,
 		step = 1,
 		minimum = 1,
-		maximum = 10
+		maximum = 10,
+		visible=False
 	)
-	# register_ui_component('benchmark_runs_checkbox_group', BENCHMARK_RUNS_CHECKBOX_GROUP)
-	# register_ui_component('benchmark_cycles_slider', BENCHMARK_CYCLES_SLIDER)
+	register_ui_component('benchmark_runs_checkbox_group', BENCHMARK_RUNS_CHECKBOX_GROUP)
+	register_ui_component('benchmark_cycles_slider', BENCHMARK_CYCLES_SLIDER)

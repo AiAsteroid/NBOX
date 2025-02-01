@@ -38,7 +38,7 @@ def render() -> None:
 	source_image_path = get_first(filter_image_paths(source_file_names))
 	SOURCE_AUDIO = gradio.Audio(
 		value = source_audio_path if has_source_audio else None,
-		visible = has_source_audio,
+		visible = False,
 		show_label = False
 	)
 	SOURCE_IMAGE = gradio.Image(
