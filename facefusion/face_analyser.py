@@ -34,11 +34,11 @@ MODELS : ModelSet =\
 		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/yoloface_8n.onnx',
 		'path': resolve_relative_path('../.assets/models/yoloface_8n.onnx')
 	},
-	# 'face_detector_yunet':
-	# {
-	# 	'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/yunet_2023mar.onnx', # find another
-	# 	'path': resolve_relative_path('../.assets/models/yunet_2023mar.onnx')
-	# },
+	'face_detector_yunet':
+	{
+		'url': 'https://huggingface.co/spaces/sam749/YuNet-face-detection/resolve/main/face_detection_yunet_2023mar.onnx', # find another
+		'path': resolve_relative_path('../.assets/models/yunet_2023mar.onnx')
+	},
 	'face_recognizer_arcface_blendswap':
 	{
 		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/arcface_w600k_r50.onnx',
@@ -49,11 +49,11 @@ MODELS : ModelSet =\
 		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/arcface_w600k_r50.onnx',
 		'path': resolve_relative_path('../.assets/models/arcface_w600k_r50.onnx')
 	},
-	# 'face_recognizer_arcface_simswap':
-	# {
-	# 	'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/arcface_simswap.onnx', # find another
-	# 	'path': resolve_relative_path('../.assets/models/arcface_simswap.onnx')
-	# },
+	'face_recognizer_arcface_simswap':
+	{
+		'url': 'https://huggingface.co/Rookiehan/facefusion/resolve/main/arcface_simswap.onnx', # find another
+		'path': resolve_relative_path('../.assets/models/arcface_simswap.onnx')
+	},
 	'face_recognizer_arcface_uniface':
 	{
 		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/arcface_w600k_r50.onnx',
@@ -64,16 +64,16 @@ MODELS : ModelSet =\
 		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/2dfan4.onnx',
 		'path': resolve_relative_path('../.assets/models/2dfan4.onnx')
 	},
-	# 'face_landmarker_68_5':
-	# {
-	# 	'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/face_landmarker_68_5.onnx', # find another
-	# 	'path': resolve_relative_path('../.assets/models/face_landmarker_68_5.onnx')
-	# },
-	# 'gender_age':
-	# {
-	# 	'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/gender_age.onnx', # find another
-	# 	'path': resolve_relative_path('../.assets/models/gender_age.onnx')
-	# }
+	'face_landmarker_68_5':
+	{
+		'url': 'https://huggingface.co/JackCui/facefusion/resolve/main/face_landmarker_68_5.onnx', # find another
+		'path': resolve_relative_path('../.assets/models/face_landmarker_68_5.onnx')
+	},
+	'gender_age':
+	{
+		'url': 'https://huggingface.co/bluefoxcreation/gender_age/resolve/main/gender_age.onnx', # find another
+		'path': resolve_relative_path('../.assets/models/gender_age.onnx')
+	}
 }
 
 
