@@ -21,7 +21,7 @@ MODELS : ModelSet =\
 	'face_occluder':
 	{
 		'url': 'https://huggingface.co/bluefoxcreation/Face-Occluder-ONNX/resolve/main/occluder.onnx',
-		'path': resolve_relative_path('../.assets/models/face_occluder.onnx')
+		'path': resolve_relative_path('../.assets/models/occluder.onnx')
 	},
 	'face_parser':
 	{
