@@ -99,6 +99,8 @@ def pre_check() -> bool:
 		print("face_masker before conditional_download")
 		conditional_download_face_masker(download_directory_path, model_urls)
 		process_manager.end()
+	for model_path in model_paths:
+		print(model_path, is_file(model_path))
 	return all(is_file(model_path) for model_path in model_paths)
 
 

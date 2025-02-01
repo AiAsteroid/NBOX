@@ -328,14 +328,6 @@ def run(program: ArgumentParser) -> None:
 		force_download()
 		return
 	if not pre_check() or not content_analyser.pre_check() or not face_analyser.pre_check() or not face_masker.pre_check() or not voice_extractor.pre_check():
-		print(
-			"pre_check or not",
-			pre_check(),
-			content_analyser.pre_check(),
-			face_analyser.pre_check(),
-			face_masker.pre_check(),
-			voice_extractor.pre_check()
-		)
 		return
 	for frame_processor_module in get_frame_processors_modules(facefusion.globals.frame_processors):
 		if not frame_processor_module.pre_check():
