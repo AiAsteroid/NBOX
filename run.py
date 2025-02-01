@@ -10,8 +10,7 @@ logging.basicConfig(
   level=logging.DEBUG,
   format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
   handlers=[
-    logging.FileHandler('ERROR.log', mode='w', encoding='utf-8'),
-    logging.StreamHandler(sys.stdout)
+    logging.FileHandler('ERROR.log', mode='w', encoding='utf-8')
   ]
 )
 

@@ -340,6 +340,7 @@ def run(program: ArgumentParser) -> None:
 		for ui_layout in ui.get_ui_layouts_modules(facefusion.globals.ui_layouts):
 			if not ui_layout.pre_check():
 				return
+		print("before ui launch")
 		ui.launch()
 	print("core.run end")
 

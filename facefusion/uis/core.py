@@ -75,8 +75,11 @@ def register_ui_component(component_name : ComponentName, component: Component) 
 
 
 def launch() -> None:
+	print("in ui.core.launch")
 	ui_layouts_total = len(facefusion.globals.ui_layouts)
 	with gradio.Blocks(theme = get_theme(), css = get_css(), title = metadata.get('name') + ' ' + metadata.get('version')) as ui:
+		if not hasattr(facefusion.globals, "ui_layouts") or not facefusion.globals.ui_layouts:
+			raise ValueError("facefusion.globals.ui_layouts не определен или пуст!")
 		for ui_layout in facefusion.globals.ui_layouts:
 			ui_layout_module = load_ui_layout_module(ui_layout)
 			if ui_layout_module.pre_render():
