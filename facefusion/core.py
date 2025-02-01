@@ -325,28 +325,28 @@ def run(program: ArgumentParser) -> None:
 	if facefusion.globals.system_memory_limit > 0:
 		limit_system_memory(facefusion.globals.system_memory_limit)
 	if facefusion.globals.force_download:
-		print("force_download")
 		force_download()
-		print("force_download end")
 		return
 	if not pre_check() or not content_analyser.pre_check() or not face_analyser.pre_check() or not face_masker.pre_check() or not voice_extractor.pre_check():
-		print("pre_check or not", pre_check(), content_analyser.pre_check(), face_analyser.pre_check(), face_masker.pre_check(),
-			  voice_extractor.pre_check())
+		print(
+			"pre_check or not",
+			pre_check(),
+			content_analyser.pre_check(),
+			face_analyser.pre_check(),
+			face_masker.pre_check(),
+			voice_extractor.pre_check()
+		)
 		return
 	for frame_processor_module in get_frame_processors_modules(facefusion.globals.frame_processors):
 		if not frame_processor_module.pre_check():
-			print("module pre_check or not")
 			return
 	if facefusion.globals.headless:
-		print("conditional_process before")
 		conditional_process()
-		print("conditional_process after")
 	else:
 		import facefusion.uis.core as ui
 
 		for ui_layout in ui.get_ui_layouts_modules(facefusion.globals.ui_layouts):
 			if not ui_layout.pre_check():
-				print("last pre check")
 				return
 		print("before ui launch")
 		ui.launch()
