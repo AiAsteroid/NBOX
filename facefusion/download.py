@@ -4,7 +4,7 @@ import ssl
 import urllib.request
 from typing import List
 from functools import lru_cache
-from tqdm import tqdm
+from tqdm.rich import tqdm
 
 import facefusion.globals
 from facefusion import wording

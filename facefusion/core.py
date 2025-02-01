@@ -35,6 +35,7 @@ from facefusion.vision import read_image, read_static_images, detect_image_resol
 onnxruntime.set_default_logger_severity(3)
 warnings.filterwarnings('ignore', category=UserWarning, module='gradio')
 
+
 def wrapped_cli() -> None:
 	try:
 		cli()
@@ -44,7 +45,6 @@ def wrapped_cli() -> None:
 			exception.__traceback__,
 			exception.__cause__,
 		)
-
 
 
 def cli() -> None:
@@ -330,7 +330,8 @@ def run(program: ArgumentParser) -> None:
 		print("force_download end")
 		return
 	if not pre_check() or not content_analyser.pre_check() or not face_analyser.pre_check() or not face_masker.pre_check() or not voice_extractor.pre_check():
-		print("pre_check or not")
+		print("pre_check or not", pre_check(), content_analyser.pre_check(), face_analyser.pre_check(), face_masker.pre_check(),
+			  voice_extractor.pre_check())
 		return
 	for frame_processor_module in get_frame_processors_modules(facefusion.globals.frame_processors):
 		if not frame_processor_module.pre_check():
@@ -350,7 +351,6 @@ def run(program: ArgumentParser) -> None:
 		print("before ui launch")
 		ui.launch()
 	print("core.run end")
-
 
 
 def destroy() -> None:
