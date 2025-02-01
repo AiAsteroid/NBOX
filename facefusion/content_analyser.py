@@ -58,6 +58,7 @@ def pre_check() -> bool:
 		conditional_download(download_directory_path, [ model_url ])
 		process_manager.end()
 		print("end content analyser downloading")
+
 	return is_file(model_path)
 
 
