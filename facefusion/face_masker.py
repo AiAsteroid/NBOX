@@ -12,7 +12,7 @@ from facefusion.thread_helper import thread_lock, conditional_thread_semaphore
 from facefusion.typing import FaceLandmark68, VisionFrame, Mask, Padding, FaceMaskRegion, ModelSet
 from facefusion.execution import apply_execution_provider_options
 from facefusion.filesystem import resolve_relative_path, is_file
-from facefusion.download import conditional_download
+from facefusion.download import conditional_download, conditional_download_face_masker
 
 FACE_OCCLUDER = None
 FACE_PARSER = None
@@ -81,7 +81,7 @@ def clear_face_parser() -> None:
 
 
 def pre_check() -> bool:
-	print("face_masker pre_check started")
+	print("FACE_MASKER pre_check started")
 	download_directory_path = resolve_relative_path('../.assets/models')
 	model_urls =\
 	[
@@ -97,7 +97,7 @@ def pre_check() -> bool:
 	if not facefusion.globals.skip_download:
 		process_manager.check()
 		print("face_masker before conditional_download")
-		conditional_download(download_directory_path, model_urls)
+		conditional_download_face_masker(download_directory_path, model_urls)
 		process_manager.end()
 	return all(is_file(model_path) for model_path in model_paths)
 
