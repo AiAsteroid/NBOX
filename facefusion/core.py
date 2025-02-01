@@ -1,7 +1,5 @@
 import os
 
-from toolz.curried import peekn
-
 os.environ['OMP_NUM_THREADS'] = '1'
 
 import signal
