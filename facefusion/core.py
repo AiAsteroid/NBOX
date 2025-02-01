@@ -332,7 +332,7 @@ def run(program: ArgumentParser) -> None:
 		return
 	for frame_processor_module in get_frame_processors_modules(facefusion.globals.frame_processors):
 		if not frame_processor_module.pre_check():
-			print("frame_processor_module pre_check not")
+			print("frame_processor_module pre_check not", frame_processor_module)
 			return
 	if facefusion.globals.headless:
 		conditional_process()
