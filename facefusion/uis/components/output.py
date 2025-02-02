@@ -36,7 +36,6 @@ def listen() -> None:
 
 
 def start() -> Tuple[gradio.Button, gradio.Button]:
-	print("BUTTON PRESSED")
 	while not process_manager.is_processing():
 		sleep(0.5)
 	return gradio.Button(visible=False), gradio.Button(visible=True)

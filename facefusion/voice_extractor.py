@@ -17,7 +17,7 @@ MODELS : ModelSet =\
 {
 	'voice_extractor':
 	{
-		'url': 'https://huggingface.co/JackCui/facefusion/resolve/main/voice_extractor.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/voice_extractor.onnx',
 		'path': resolve_relative_path('../.assets/models/voice_extractor.onnx')
 	}
 }

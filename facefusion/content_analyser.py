@@ -53,11 +53,9 @@ def pre_check() -> bool:
 	model_path = MODELS.get('open_nsfw').get('path')
 
 	if not facefusion.globals.skip_download:
-		print("into content analyser downloading")
 		process_manager.check()
 		conditional_download(download_directory_path, [ model_url ])
 		process_manager.end()
-		print("end content analyser downloading")
 
 	return is_file(model_path)
 

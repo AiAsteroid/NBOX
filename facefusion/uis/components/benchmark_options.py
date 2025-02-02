@@ -10,7 +10,6 @@ BENCHMARK_CYCLES_SLIDER : Optional[gradio.Button] = None
 
 
 def render() -> None:
-	print("")
 	global BENCHMARK_RUNS_CHECKBOX_GROUP
 	global BENCHMARK_CYCLES_SLIDER
 

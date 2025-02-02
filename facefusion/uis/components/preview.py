@@ -150,6 +150,8 @@ def clear_and_update_preview_image(frame_number : int = 0) -> gradio.Image:
 
 
 def update_preview_image(frame_number : int = 0) -> gradio.Image:
+	if not facefusion.globals.target_path or not facefusion.globals.source_paths:
+		return gradio.Image(value = None)
 	for frame_processor in facefusion.globals.frame_processors:
 		frame_processor_module = load_frame_processor_module(frame_processor)
 		while not frame_processor_module.post_check():

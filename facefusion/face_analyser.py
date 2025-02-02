@@ -21,57 +21,57 @@ MODELS : ModelSet =\
 {
 	'face_detector_retinaface':
 	{
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/retinaface_10g.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/retinaface_10g.onnx',
 		'path': resolve_relative_path('../.assets/models/retinaface_10g.onnx')
 	},
 	'face_detector_scrfd':
 	{
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/scrfd_2.5g.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/scrfd_2.5g.onnx',
 		'path': resolve_relative_path('../.assets/models/scrfd_2.5g.onnx')
 	},
 	'face_detector_yoloface':
 	{
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/yoloface_8n.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/yoloface_8n.onnx',
 		'path': resolve_relative_path('../.assets/models/yoloface_8n.onnx')
 	},
 	'face_detector_yunet':
 	{
-		'url': 'https://huggingface.co/spaces/sam749/YuNet-face-detection/resolve/main/face_detection_yunet_2023mar.onnx', # find another
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/yunet_2023mar.onnx', # find another
 		'path': resolve_relative_path('../.assets/models/yunet_2023mar.onnx')
 	},
 	'face_recognizer_arcface_blendswap':
 	{
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/arcface_w600k_r50.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/arcface_w600k_r50.onnx',
 		'path': resolve_relative_path('../.assets/models/arcface_w600k_r50.onnx')
 	},
 	'face_recognizer_arcface_inswapper':
 	{
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/arcface_w600k_r50.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/arcface_w600k_r50.onnx',
 		'path': resolve_relative_path('../.assets/models/arcface_w600k_r50.onnx')
 	},
 	'face_recognizer_arcface_simswap':
 	{
-		'url': 'https://huggingface.co/Rookiehan/facefusion/resolve/main/arcface_simswap.onnx', # find another
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/arcface_simswap.onnx', # find another
 		'path': resolve_relative_path('../.assets/models/arcface_simswap.onnx')
 	},
 	'face_recognizer_arcface_uniface':
 	{
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/arcface_w600k_r50.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/arcface_w600k_r50.onnx',
 		'path': resolve_relative_path('../.assets/models/arcface_w600k_r50.onnx')
 	},
 	'face_landmarker_68':
 	{
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/2dfan4.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/2dfan4.onnx',
 		'path': resolve_relative_path('../.assets/models/2dfan4.onnx')
 	},
 	'face_landmarker_68_5':
 	{
-		'url': 'https://huggingface.co/JackCui/facefusion/resolve/main/face_landmarker_68_5.onnx', # find another
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/face_landmarker_68_5.onnx', # find another
 		'path': resolve_relative_path('../.assets/models/face_landmarker_68_5.onnx')
 	},
 	'gender_age':
 	{
-		'url': 'https://huggingface.co/bluefoxcreation/gender_age/resolve/main/gender_age.onnx', # find another
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/gender_age.onnx', # find another
 		'path': resolve_relative_path('../.assets/models/gender_age.onnx')
 	}
 }

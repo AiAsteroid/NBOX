@@ -29,13 +29,13 @@ MODELS : ModelSet =\
 	'ddcolor':
 	{
 		'type': 'ddcolor',
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/ddcolor.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/ddcolor.onnx',
 		'path': resolve_relative_path('../.assets/models/ddcolor.onnx')
 	},
 	'ddcolor_artistic':
 	{
 		'type': 'ddcolor',
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/ddcolor_artistic.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/ddcolor_artistic.onnx',
 		'path': resolve_relative_path('../.assets/models/ddcolor_artistic.onnx')
 	},
 	'deoldify':
@@ -47,7 +47,7 @@ MODELS : ModelSet =\
 	'deoldify_artistic':
 	{
 		'type': 'deoldify',
-		'url': 'https://github.com/facefusion/facefusion-assets/releases/download/models-3.0.0/deoldify_artistic.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/deoldify_artistic.onnx',
 		'path': resolve_relative_path('../.assets/models/deoldify_artistic.onnx')
 	},
 	'deoldify_stable':

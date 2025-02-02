@@ -20,12 +20,12 @@ MODELS : ModelSet =\
 {
 	'face_occluder':
 	{
-		'url': 'https://huggingface.co/bluefoxcreation/Face-Occluder-ONNX/resolve/main/occluder.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/occluder.onnx',
 		'path': resolve_relative_path('../.assets/models/occluder.onnx')
 	},
 	'face_parser':
 	{
-		'url': 'https://huggingface.co/crj/dl-ws/resolve/main/face_parser.onnx',
+		'url': 'https://github.com/AlperlavKirill/nbox-assets/releases/download/v2.0/face_parser.onnx',
 		'path': resolve_relative_path('../.assets/models/face_parser.onnx')
 	}
 }
@@ -81,7 +81,6 @@ def clear_face_parser() -> None:
 
 
 def pre_check() -> bool:
-	print("FACE_MASKER pre_check started")
 	download_directory_path = resolve_relative_path('../.assets/models')
 	model_urls =\
 	[
@@ -96,11 +95,8 @@ def pre_check() -> bool:
 
 	if not facefusion.globals.skip_download:
 		process_manager.check()
-		print("face_masker before conditional_download")
 		conditional_download_face_masker(download_directory_path, model_urls)
 		process_manager.end()
-	for model_path in model_paths:
-		print(model_path, is_file(model_path))
 	return all(is_file(model_path) for model_path in model_paths)
 
 

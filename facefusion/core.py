@@ -36,21 +36,8 @@ onnxruntime.set_default_logger_severity(3)
 warnings.filterwarnings('ignore', category=UserWarning, module='gradio')
 
 
-def wrapped_cli() -> None:
-	try:
-		cli()
-	except Exception as exception:
-		print(
-			exception,
-			exception.__traceback__,
-			exception.__cause__,
-		)
-
-
 def cli() -> None:
-	print("in cli1")
 	signal.signal(signal.SIGINT, lambda signal_number, frame: destroy())
-	print("in cli2")
 	program = ArgumentParser(formatter_class=lambda prog: HelpFormatter(prog, max_help_position=200), add_help=False)
 	# general
 	program.add_argument('-c', '--config', help=wording.get('help.config'), dest='config_path',
@@ -221,7 +208,6 @@ def apply_config(program: ArgumentParser) -> None:
 
 
 def validate_args(program: ArgumentParser) -> None:
-	print("validate_args start")
 	try:
 		for action in program._actions:
 			if action.default:
@@ -232,11 +218,9 @@ def validate_args(program: ArgumentParser) -> None:
 					program._check_value(action, action.default)
 	except Exception as exception:
 		program.error(str(exception))
-	print("validate_args end")
 
 
 def apply_args(program: ArgumentParser) -> None:
-	print("core.apply_args start")
 	args = program.parse_args()
 	# general
 	facefusion.globals.source_paths = args.source_paths
@@ -313,11 +297,9 @@ def apply_args(program: ArgumentParser) -> None:
 	# uis
 	facefusion.globals.open_browser = args.open_browser
 	facefusion.globals.ui_layouts = args.ui_layouts
-	print("core.apply_args end")
 
 
 def run(program: ArgumentParser) -> None:
-	print("core.run start")
 	validate_args(program)
 	apply_args(program)
 	logger.init(facefusion.globals.log_level)
@@ -328,11 +310,9 @@ def run(program: ArgumentParser) -> None:
 		force_download()
 		return
 	if not pre_check() or not content_analyser.pre_check() or not face_analyser.pre_check() or not face_masker.pre_check() or not voice_extractor.pre_check():
-		print("pre_check not")
 		return
 	for frame_processor_module in get_frame_processors_modules(facefusion.globals.frame_processors):
 		if not frame_processor_module.pre_check():
-			print("frame_processor_module pre_check not", frame_processor_module)
 			return
 	if facefusion.globals.headless:
 		conditional_process()
@@ -341,11 +321,8 @@ def run(program: ArgumentParser) -> None:
 
 		for ui_layout in ui.get_ui_layouts_modules(facefusion.globals.ui_layouts):
 			if not ui_layout.pre_check():
-				print('ui_layout pre_check not')
 				return
-		print("before ui launch")
 		ui.launch()
-	print("core.run end")
 
 
 def destroy() -> None:
